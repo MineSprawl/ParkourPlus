@@ -1,5 +1,6 @@
 package net.minesprawl.api;
 
+import net.minesprawl.api.events.CheckpointReachedEvent;
 import net.minesprawl.api.events.CourseCompletedEvent;
 import net.minesprawl.api.events.CourseFallEvent;
 import net.minesprawl.api.events.CourseStartedEvent;
@@ -12,6 +13,59 @@ import java.util.function.Consumer;
  * Represents a parkour course that can be partaken in by player
  */
 public interface Course {
+    /**
+     * @return the courses unique identifier
+     */
+    String getId();
+
+    /**
+     * @return the starting location
+     */
+    Location getStart();
+
+    /**
+     * @return the ending location
+     */
+    Location getEnd();
+
+    /**
+     * @return the acceptable radius around the end location
+     */
+    Integer getEndRadius();
+
+    /**
+     * @return the falling y-level
+     */
+    Double getFallYLevel();
+
+    /**
+     * @return a list of checkpoints in this course
+     */
+    List<Checkpoint> getCheckpoints();
+
+    /**
+     * @return a consumer that handles a {@link CourseStartedEvent}
+     */
+    Consumer<CourseStartedEvent> getStartHandler();
+
+
+    /**
+     * @return a consumer that handles a {@link CourseCompletedEvent}
+     */
+    Consumer<CourseCompletedEvent> getEndHandler();
+
+
+    /**
+     * @return a consumer that handles a {@link CourseFallEvent}
+     */
+    Consumer<CourseFallEvent> getFallHandler();
+
+
+    /**
+     * @return a consumer that handles a {@link CheckpointReachedEvent}
+     */
+    Consumer<CheckpointReachedEvent> getCheckpointHandler();
+
     /**
      * Sets the starting location of the parkour course
      *
@@ -105,4 +159,14 @@ public interface Course {
      * @return the course
      */
     Course addCheckpoints(List<Checkpoint> checkpoints);
+
+    /**
+     * Sets the checkpoint reached action which is a consumer that is called
+     * when the player reaches any checkpoint in the course
+     *
+     * @param handler a consumer that handles a {@link CheckpointReachedEvent}
+     *
+     * @return the course
+     */
+    Course setCheckpointReachedAction(Consumer<CheckpointReachedEvent> handler);
 }
