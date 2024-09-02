@@ -7,9 +7,14 @@ version = "unspecified"
 
 repositories {
     mavenCentral()
+    maven {
+        name = "spigotmc-repo"
+        url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
+    }
 }
 
 dependencies {
+    compileOnly("org.spigotmc:spigot-api:1.19.4-R0.1-SNAPSHOT")
 }
 
 val targetJavaVersion = JavaVersion.VERSION_17
