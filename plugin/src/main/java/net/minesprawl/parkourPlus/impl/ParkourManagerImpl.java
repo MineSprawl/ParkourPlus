@@ -14,6 +14,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import javax.annotation.Nullable;
 import java.util.*;
@@ -100,6 +101,17 @@ public class ParkourManagerImpl implements ParkourManager, Listener {
                 playerStarted(event.getPlayer(), course);
             }
         }
+    }
+
+    @EventHandler
+    public void onPlayerQuit(PlayerQuitEvent event) {
+        for (HashSet<UUID> playerList : coursePlayers.values()) {
+            if (playerList.contains(event.getPlayer().getUniqueId())) {
+                playerList.remove(event.getPlayer().getUniqueId());
+                break;
+            }
+        }
+        checkpointHistory.remove(event.getPlayer().getUniqueId());
     }
 
     private void playerStarted(Player player, Course course) {
