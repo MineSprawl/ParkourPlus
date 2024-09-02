@@ -1,0 +1,8 @@
+name: ParkourPlus
+version: '1.0.0'
+main: net.minesprawl.parkourPlus.ParkourPlus
+api-version: '1.19'
+prefix: ParkourPlus
+authors: [ CDX ]
+description: A simple and lightweight parkour plugin aimed at developers.
+website: https://parkourplus.minesprawl.net
