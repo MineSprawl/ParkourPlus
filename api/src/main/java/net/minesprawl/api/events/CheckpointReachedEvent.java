@@ -1,12 +1,23 @@
 package net.minesprawl.api.events;
 
 import net.minesprawl.api.Checkpoint;
+import net.minesprawl.api.Course;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 
 public class CheckpointReachedEvent extends CheckpointEvent {
-    public CheckpointReachedEvent(Player who, Checkpoint checkpoint) {
+    private final Course course;
+
+    /**
+     * @return the course that the checkpoint belongs to
+     */
+    public Course getCourse() {
+        return course;
+    }
+
+    public CheckpointReachedEvent(Player who, Course course, Checkpoint checkpoint) {
         super(who, checkpoint);
+        this.course = course;
     }
 
     private static final HandlerList handlers = new HandlerList();
