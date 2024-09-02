@@ -31,7 +31,7 @@ public interface Course {
     /**
      * @return the acceptable radius around the end location
      */
-    Integer getEndRadius();
+    Double getEndRadius();
 
     /**
      * @return the falling y-level
@@ -93,7 +93,7 @@ public interface Course {
      *
      * @return the course
      */
-    Course setEnd(Location location, Integer radius);
+    Course setEnd(Location location, Double radius);
 
     /**
      * Sets the ending location of the parkour course

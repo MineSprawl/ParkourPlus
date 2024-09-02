@@ -17,7 +17,7 @@ public interface Checkpoint {
      *
      * @return the checkpoint
      */
-    Checkpoint setLocation(Location location, Integer radius);
+    Checkpoint setLocation(Location location, Double radius);
 
     /**
      * Sets the location the player must reach to obtain this checkpoint
