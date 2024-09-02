@@ -10,6 +10,21 @@ import java.util.function.Consumer;
  */
 public interface Checkpoint {
     /**
+     * @return the location of the checkpoint
+     */
+    Location getLocation();
+
+    /**
+     * @return the accept radius from the checkpoint location to accept
+     */
+    Double getRadius();
+
+    /**
+     * @return a consumer that handles a {@link CheckpointReachedEvent} for this checkpoint
+     */
+    Consumer<CheckpointReachedEvent> getReachedHandler();
+
+    /**
      * Sets the location the player must reach to obtain this checkpoint
      *
      * @param location the location of the checkpoint
