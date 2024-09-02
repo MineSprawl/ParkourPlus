@@ -16,6 +16,13 @@ public interface ParkourManager {
     Course createCourse(String id);
 
     /**
+     * Creates a new empty checkpoint
+     *
+     * @return the checkpoint
+     */
+    Checkpoint createCheckpoint();
+
+    /**
      * Registers a course
      *
      * @param course the course to register
