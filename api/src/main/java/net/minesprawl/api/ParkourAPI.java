@@ -7,7 +7,7 @@ import org.bukkit.plugin.Plugin;
 public class ParkourAPI {
     private static ParkourManager manager;
 
-    public static ParkourManager getInstance() throws PluginInstallationException {
+    public static ParkourManager getInstance() {
         if (manager == null) {
             if (!Bukkit.getPluginManager().isPluginEnabled("ParkourPlus")) {
                 throw new PluginInstallationException("ParkourPlus is not enabled!");
