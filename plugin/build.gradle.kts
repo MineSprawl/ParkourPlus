@@ -1,5 +1,6 @@
 plugins {
     java
+    id("com.gradleup.shadow") version "8.3.0"
     id("xyz.jpenilla.run-paper") version "2.3.1"
 }
 
@@ -25,7 +26,7 @@ dependencies {
 
 tasks {
     runServer {
-        minecraftVersion("1.21.1")
+        minecraftVersion("1.19.4")
     }
 }
 
