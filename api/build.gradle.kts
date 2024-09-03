@@ -3,7 +3,7 @@ plugins {
 }
 
 group = "net.minesprawl"
-version = "unspecified"
+version = "1.0.0"
 
 repositories {
     mavenCentral()
