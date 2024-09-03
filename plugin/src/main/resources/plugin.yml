@@ -1,5 +1,5 @@
 name: ParkourPlus
-version: '1.0.0'
+version: '1.0.1'
 main: net.minesprawl.parkourPlus.ParkourPlus
 api-version: '1.19'
 prefix: ParkourPlus
